@@ -1,8 +1,6 @@
-local EventFrame = CreateFrame("frame", "EventFrame")
-EventFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
-
-EventFrame:SetScript("OnEvent", function(self, event, ...)
-	if event == "PLAYER_ENTERING_WORLD" then
-        OpenWorldMap();
-	end
+local button = CreateFrame('Button', 'OpenMapButton', UIParent, "UIPanelButtonTemplate")
+button:SetPoint('TOPLEFT')
+button:SetSize(25, 25)
+button:SetScript('OnClick', function()
+	OpenWorldMap();
 end)
